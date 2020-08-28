@@ -1,0 +1,24 @@
+---
+title: "Machine Learning"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Description
+
+This is the final project for the Machine Learning Course. This submission will not include R code only a brief description of the steps taken as it follows.
+
+Since it is a huge data set, the first thing to do is to clean the data set to make a more compact data set to decrease the processing time.
+
+After a first look of the data, it is noticeable that many variables are full of missing values. After a initial analysis, 97% of such variables are missing values, thus, these variables could create noise in the data analysis and they probaby would not contribute a lot for the predictions. 
+
+After removing such variables some other editing was required. The classe column was switched from character class to factor and any other columns which were labeled as character were switched to the most appropiate class.
+
+Data partition of the training dataset was created and a gbm-type fit was made on one of the partitions using caret package.
+
+After this, the model was tested on the reminding partition and the accuracy was measured obtaining >99%.
+
+The prediction was applied to the test set obtaining the 20 answers correct.
